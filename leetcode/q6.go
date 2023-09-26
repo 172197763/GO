@@ -1,14 +1,13 @@
-package main
+package leetcode
 
-import "fmt"
-
+//LFU算法实现
 type LFUCache struct {
 	cap  int
 	vmap map[int]*Vmap
 	link *IdexMap //索引
 }
 
-//单链表
+// 单链表
 type IdexMap struct {
 	cnt  int
 	head *IdxLink //节点下的数据链表(头)
@@ -16,7 +15,7 @@ type IdexMap struct {
 	next *IdexMap //下一节点
 }
 
-//双向链表索引
+// 双向链表索引
 type IdxLink struct {
 	cnt  int      //命中次数
 	key  int      //值
@@ -24,7 +23,7 @@ type IdxLink struct {
 	next *IdxLink //后指针
 }
 
-//哈希结构
+// 哈希结构
 type Vmap struct {
 	num int //值
 	cnt int //命中次数
@@ -127,39 +126,39 @@ func Constructor(capacity int) LFUCache {
  * param_1 := obj.Get(key);
  * obj.Put(key,value);
  */
-func main() {
-	op := []string{"LFUCache", "put", "put", "put", "put", "put", "put", "put", "put", "put", "put", "put", "get", "get", "get", "get", "get", "get", "get", "get", "get", "get", "get"}
-	params := [][]int{
-		{10}, {0, 0}, {1, 1}, {2, 2}, {3, 3}, {4, 4}, {5, 5}, {6, 6}, {7, 7}, {8, 8}, {9, 9}, {10, 10}, {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10},
-	}
-	capacity := 10
-	var obj LFUCache
-	for k, v := range op {
-		// fmt.Println(k, v, params[k][0])
-		switch v {
-		case "LFUCache":
-			obj = Constructor(capacity)
-		case "put":
-			obj.Put(params[k][0], params[k][1])
-			fmt.Println("null")
-		case "get":
-			fmt.Println(obj.Get(params[k][0]))
-		}
-	}
-	// return
-	// obj := Constructor(capacity)
-	// fmt.Println(obj.Get(1))
-	// obj.Put(1, 1)
-	// fmt.Println(obj.Get(1))
-	// fmt.Println(obj)
-	// var vmap map[int]Vmap
-	// vmap = make(map[int]Vmap)
-	// vmap[1] = Vmap{2, 1}
-	// for v := range vmap {
-	// 	fmt.Println("idx:", v, vmap[v].num, vmap[v].cnt)
-	// }
-	// t, ok := vmap[1]
-	// fmt.Println(t, ok)
-	// t, ok = vmap[2]
-	// fmt.Println(t, ok)
-}
+// func main() {
+// 	op := []string{"LFUCache", "put", "put", "put", "put", "put", "put", "put", "put", "put", "put", "put", "get", "get", "get", "get", "get", "get", "get", "get", "get", "get", "get"}
+// 	params := [][]int{
+// 		{10}, {0, 0}, {1, 1}, {2, 2}, {3, 3}, {4, 4}, {5, 5}, {6, 6}, {7, 7}, {8, 8}, {9, 9}, {10, 10}, {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10},
+// 	}
+// 	capacity := 10
+// 	var obj LFUCache
+// 	for k, v := range op {
+// 		// fmt.Println(k, v, params[k][0])
+// 		switch v {
+// 		case "LFUCache":
+// 			obj = Constructor(capacity)
+// 		case "put":
+// 			obj.Put(params[k][0], params[k][1])
+// 			fmt.Println("null")
+// 		case "get":
+// 			fmt.Println(obj.Get(params[k][0]))
+// 		}
+// 	}
+// 	// return
+// 	// obj := Constructor(capacity)
+// 	// fmt.Println(obj.Get(1))
+// 	// obj.Put(1, 1)
+// 	// fmt.Println(obj.Get(1))
+// 	// fmt.Println(obj)
+// 	// var vmap map[int]Vmap
+// 	// vmap = make(map[int]Vmap)
+// 	// vmap[1] = Vmap{2, 1}
+// 	// for v := range vmap {
+// 	// 	fmt.Println("idx:", v, vmap[v].num, vmap[v].cnt)
+// 	// }
+// 	// t, ok := vmap[1]
+// 	// fmt.Println(t, ok)
+// 	// t, ok = vmap[2]
+// 	// fmt.Println(t, ok)
+// }

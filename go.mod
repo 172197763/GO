@@ -1,3 +1,3 @@
-module go_work
+module GO
 
 go 1.21.1
