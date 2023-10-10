@@ -12,5 +12,6 @@ func main() {
 	// 	param_1 := obj.Next(v)
 	// 	fmt.Println(param_1)
 	// }
-	fmt.Println(leetcode.SplitNum(687))
+	// fmt.Println(leetcode.SplitNum(687))
+	fmt.Println(leetcode.SumDistance([]int{-10, -13, 10, 14, 11}, "LRLLR", 2))
 }
